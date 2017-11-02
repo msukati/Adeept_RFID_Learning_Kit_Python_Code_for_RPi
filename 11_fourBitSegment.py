@@ -58,7 +58,9 @@ def display_3(num):
 		GPIO.output(BIT1, GPIO.HIGH)   
 		GPIO.output(BIT2, GPIO.HIGH)   
 		GPIO.output(BIT3, GPIO.HIGH)   
-	 	digitalWriteByte(segCode[b0])  
+	 	digitalWriteByte(segCode[b0])
+	 	time.sleep(0.002)  
+		GPIO.output(BIT0, GPIO.HIGH)  
 	elif num >= 10 and num < 100:  
 		GPIO.output(BIT0, GPIO.LOW)  
 		digitalWriteByte(segCode[b0])  
@@ -67,7 +69,9 @@ def display_3(num):
 		GPIO.output(BIT1, GPIO.LOW)  
 		digitalWriteByte(segCode[b1])  
 		time.sleep(0.002)  
-	 	GPIO.output(BIT1, GPIO.HIGH)  
+	 	GPIO.output(BIT1, GPIO.HIGH)
+	 	GPIO.output(BIT2, GPIO.HIGH)   
+		GPIO.output(BIT3, GPIO.HIGH)  
 	elif num >= 100 and num < 1000:  
 		GPIO.output(BIT0, GPIO.LOW)  
 		digitalWriteByte(segCode[b0])  
@@ -80,7 +84,8 @@ def display_3(num):
 		GPIO.output(BIT2, GPIO.LOW)  
 		digitalWriteByte(segCode[b2])  
 		time.sleep(0.002)  
-	 	GPIO.output(BIT2, GPIO.HIGH)   
+	 	GPIO.output(BIT2, GPIO.HIGH)
+	 	GPIO.output(BIT3, GPIO.HIGH) 
 	elif num >= 1000 and num < 10000:  
 		GPIO.output(BIT0, GPIO.LOW)  
 		digitalWriteByte(segCode[b0])  
